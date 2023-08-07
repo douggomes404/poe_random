@@ -1,0 +1,79 @@
+{{>partials/header}}
+
+{{#banner}}
+<section class="banner" style="background-image: url('images/{{background}}')">{{title}}</section>
+<h2>{{ title }} </h2>
+{{/banner}}
+
+{{#list}}
+<div class="container list">
+    
+    <div class="item">
+        <img src="images/{{class}}.jpg" class="item--image" />
+        <div class="item--name">{{class}}</div>
+        <div class="item--genre">Ascendencias: {{ascendance}}</div>
+    </div>
+    {{#asce}}
+    <div class="item">
+        <img src="images/{{asce}}.jpg" class="item--image" />
+        <div class="item--name">{{asce}}</div>
+    </div>
+    {{/asce}}
+</div>
+
+<!-- Primeira div com o primeiro botão -->
+<div class="container no-list">
+        <input type="hidden" name="class" value="{{class}}">
+        <button id="randomize-button" type="submit">Deixar mais difícil? Randomizar Ascendency</button>
+        <div class="item hidden">
+            <img src="images/{{class}}.jpg" class="item--image" />
+            <div class="item--name">{{class}}</div>
+            <div class="item--genre">Ascendências: {{ascendance}}</div>
+        </div>
+</div>
+
+<!-- Segunda div com o segundo botão -->
+<div class="container no-list hidden">
+    <input type="hidden" name="class" value="{{class}}">
+    <button id="challenge-button" type="button">Escolha sua Challenge</button>
+    <div class="item hidden">
+        <img src="images/{{class}}.jpg" class="item--image" />
+        <div class="item--name">{{class}}</div>
+        <div class="item--genre">Ascendências: {{ascendance}}</div>
+    </div>
+</div>
+
+
+{{/list}}
+
+{{^list}}
+<div class="container no-list">
+    <form id="randomize-form" action="/rand-class" method="get">      
+        <button type="submit"> Randomizar Classe!</button>
+    </form>
+</div>
+{{/list}}
+
+
+{{>partials/footer}}
+
+
+<script>
+// Primeiro botão e div correspondente
+const randomizeButton = document.getElementById('randomize-button');
+const randomizeDiv = document.querySelector('.container.no-list:first-child .item.hidden');
+
+randomizeButton.addEventListener('click', () => {
+    randomizeDiv.classList.remove('hidden');
+    randomizeButton.style.display = 'none';
+});
+
+// Segundo botão e div correspondente
+const challengeButton = document.getElementById('challenge-button');
+const challengeDiv = document.querySelector('.container.no-list:last-child .item.hidden');
+
+challengeButton.addEventListener('click', () => {
+    challengeDiv.classList.remove('hidden');
+    challengeButton.style.display = 'none';
+});
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poe Random Challange</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="container">
+        <a href="/">Poe Random Challange</a>
+        <form method="GET" action="/search">
+            <input type="search" name="q" placeholder="" value="{{query}}"/>
+        </form>
+    </div>
+</header>
+<nav>
+    <ul>
+        <li class="{{#menu.all}}active{{/menu.all}}"><a href="/">Home</a></li>
+        <li class="{{#menu.builds}}active{{/menu.builds}}"><a href="https://poe.ninja/builds/challenge">Builds</a></li>
+        <li class="{{#menu.poe}}active{{/menu.poe}}"><a href="https://www.pathofexile.com/">Path of Exile Home</a></li>
+    </ul>
+</nav>
