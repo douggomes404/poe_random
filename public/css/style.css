@@ -13,7 +13,8 @@
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--pagebg);
+    background-color: grey;
+    
 }
 .container {
     max-width: 1100px;
@@ -62,7 +63,7 @@ ul li:hover a {
 }
 
 .banner {
-    height: 300px;
+    height: 100px;
     background: var(--lighter);
     background-size: cover;
     background-position: center;
@@ -115,6 +116,33 @@ h2 {
     color: var(--lighter);
     margin-bottom: 3px;
 }
+.center-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+/* Set a fixed size and rounded shape for the image */
+.rounded-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.rounded-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.meio{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+}​
 
 footer {
     border-top: 1px solid var(--lighter);
